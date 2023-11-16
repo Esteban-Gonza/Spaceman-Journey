@@ -15,6 +15,14 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    [Header("Jump Buffering")]
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
     [Header("References")]
     private Rigidbody2D playerRigid;
     private Animator playerAnim;
@@ -29,12 +37,38 @@ public class PlayerMovement : MonoBehaviour{
     {
         horizontalMovement = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
+        {
             Jump();
 
+            jumpBufferCounter = 0f;
+        }
+
         if (Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W) && playerRigid.velocity.y > 0f)
+        {
             ReleaseJump();
 
+            coyoteTimeCounter = 0f;
+        }
+            
         Flip();
 
         playerAnim.SetFloat("HorizontalMovement", horizontalMovement);
