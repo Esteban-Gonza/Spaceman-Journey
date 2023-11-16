@@ -17,10 +17,12 @@ public class PlayerMovement : MonoBehaviour{
 
     [Header("References")]
     private Rigidbody2D playerRigid;
+    private Animator playerAnim;
 
     private void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,13 +36,14 @@ public class PlayerMovement : MonoBehaviour{
             ReleaseJump();
 
         Flip();
+
+        playerAnim.SetFloat("HorizontalMovement", horizontalMovement);
+        playerAnim.SetBool("IsGrounded", IsGrounded());
     }
 
     private void FixedUpdate()
     {
         playerRigid.velocity = new Vector2(horizontalMovement * speed, playerRigid.velocity.y);
-
-        
     }
 
     private bool IsGrounded()
