@@ -26,11 +26,13 @@ public class PlayerMovement : MonoBehaviour{
     [Header("References")]
     private Rigidbody2D playerRigid;
     private Animator playerAnim;
+    private PlayerController playerController;
 
     private void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -77,7 +79,8 @@ public class PlayerMovement : MonoBehaviour{
 
     private void FixedUpdate()
     {
-        playerRigid.velocity = new Vector2(horizontalMovement * speed, playerRigid.velocity.y);
+        if(playerController.canMove)
+            playerRigid.velocity = new Vector2(horizontalMovement * speed, playerRigid.velocity.y);
     }
 
     private bool IsGrounded()
