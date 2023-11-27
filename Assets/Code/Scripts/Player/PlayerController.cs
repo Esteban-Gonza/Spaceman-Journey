@@ -51,4 +51,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(loseControlTime);
         Physics2D.IgnoreLayerCollision(7, 8, false);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Item item = collision.collider.GetComponent<Item>();
+        item?.Activate();
+    }
 }
