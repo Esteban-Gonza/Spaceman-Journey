@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int health;
 
     [SerializeField] private float loseControlTime;
     public bool canMove = true;
     [SerializeField] private Vector2 bounceSpeed;
 
     [Header("References")]
+    [SerializeField] private HealthBar healthBar;
     private Animator playerAnim;
     private Rigidbody2D playerRigid;
 
@@ -25,9 +25,11 @@ public class PlayerController : MonoBehaviour
         playerRigid.velocity = new Vector2(-bounceSpeed.x * hitPoint.x, bounceSpeed.y);
     }
 
-    public void Hit(int damage, Vector2 position)
+    public void Hit(Vector2 position)
     {
-        health -= damage;
+        GameManager.Instance.playerHealth--;
+        healthBar.ChangeCurrentHealth(GameManager.Instance.playerHealth);
+
         playerAnim.SetTrigger("Hit");
         StartCoroutine(LoseControl());
         StartCoroutine(NoCollisions());

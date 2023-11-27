@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int damage;
 
     [Header("References")]
     private PlayerController player;
@@ -18,7 +17,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.Hit(damage, collision.GetContact(0).normal);
+            player.Hit(collision.GetContact(0).normal);
         }
     }
 }
