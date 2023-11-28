@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5327787733226821364}
   - component: {fileID: 3527125017737430080}
   - component: {fileID: 840889787882823524}
+  - component: {fileID: 7450743134917949744}
   m_Layer: 0
   m_Name: SmallEnemy
   m_TagString: Enemy
@@ -142,3 +143,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.025, y: 0.41875}
   m_Direction: 1
+--- !u!114 &7450743134917949744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051143218161849047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d7ce57f8153784f88f6fd897f65959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

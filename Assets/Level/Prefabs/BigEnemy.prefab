@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5820626920922595920}
   - component: {fileID: 6363191143350558237}
   - component: {fileID: 3256196607026680416}
+  - component: {fileID: 7619969061779049158}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -142,3 +143,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.71875, y: 0.70625}
   m_Direction: 1
+--- !u!114 &7619969061779049158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475964831064014743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d7ce57f8153784f88f6fd897f65959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
