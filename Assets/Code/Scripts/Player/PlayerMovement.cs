@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour{
 
     [Header("Movement")]
     [SerializeField] private float speed = 8f;
-    [SerializeField] private float jumpForce = 16f;
+    public float jumpForce = 16f;
     private float horizontalMovement;
     private bool isFacingRight = true;
 
