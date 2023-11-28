@@ -27,13 +27,16 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(Vector2 position)
     {
-        GameManager.Instance.playerHealth--;
-        healthBar.ChangeCurrentHealth(GameManager.Instance.playerHealth);
+        if(GameManager.Instance.isVulnerable == true)
+        {
+            GameManager.Instance.playerHealth--;
+            healthBar.ChangeCurrentHealth(GameManager.Instance.playerHealth);
 
-        playerAnim.SetTrigger("Hit");
-        StartCoroutine(LoseControl());
-        StartCoroutine(NoCollisions());
-        Bounce(position);
+            playerAnim.SetTrigger("Hit");
+            StartCoroutine(LoseControl());
+            StartCoroutine(NoCollisions());
+            Bounce(position);
+        }
     }
 
     public void Death()

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int playerHealth;
     public int playerMaxHealth;
 
+    public bool isVulnerable;
+
     [Header("References")]
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private PlayerController player;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         playerHealth = playerMaxHealth;
         healthBar.InitializeHealthBar(playerHealth);
+        isVulnerable = true;
     }
 
     private void Update()

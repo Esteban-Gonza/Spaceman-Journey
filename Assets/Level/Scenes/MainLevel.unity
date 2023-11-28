@@ -890,6 +890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 0
   playerMaxHealth: 3
+  isVulnerable: 0
   healthBar: {fileID: 635431189}
   player: {fileID: 169749026}
   coinText: {fileID: 1226639706}
@@ -1358,63 +1359,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &2351574554962555562
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811279559641844083, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321952231114104104, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
-      propertyPath: m_Name
-      value: HealthPotion
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9cd1e1d85cb04de489becee5a20ca0e8, type: 3}
 --- !u!1001 &6927765729374286296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,4 +1429,3 @@ SceneRoots:
   - {fileID: 644350380}
   - {fileID: 960313985}
   - {fileID: 1895736773}
-  - {fileID: 2351574554962555562}
