@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] float speed;
+
     [Header("References")]
     private PlayerController player;
     private Rigidbody2D enemyRigid;
@@ -12,6 +14,11 @@ public class Enemy : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         enemyRigid = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
