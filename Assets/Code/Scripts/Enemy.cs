@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
             if (GameManager.Instance.isVulnerable)
             {
                 player.Hit(collision.GetContact(0).normal);
+                CameraController.instance.ShakeCamera(3f, 0.5f);
             }
         }
     }
