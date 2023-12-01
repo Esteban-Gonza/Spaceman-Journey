@@ -11,13 +11,18 @@ public class PlayerController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private BackgroundMovement background;
     private Animator playerAnim;
     private Rigidbody2D playerRigid;
+    private CapsuleCollider2D playerCollider;
 
     private void Start()
     {
         playerAnim = GetComponent<Animator>();
         playerRigid = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
+
+        playerCollider.enabled = true;
     }
 
     public void Bounce(Vector2 hitPoint)
@@ -42,6 +47,9 @@ public class PlayerController : MonoBehaviour
     public void Death()
     {
         playerAnim.SetTrigger("Death");
+        background.StopMovement();
+        healthBar.ChangeCurrentHealth(GameManager.Instance.playerHealth);
+        playerCollider.enabled = false;
     }
 
     IEnumerator LoseControl(){
